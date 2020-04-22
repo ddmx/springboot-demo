@@ -1,0 +1,21 @@
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.dmx.demo.model
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=utf8&useTimezone=true&serverTimezone=GMT%2B8
+    username: root
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 60000
+      max-lifetime: 540000
+      maximum-pool-size: 10
+      minimum-idle: 2
+      pool-name: HikariCP
+    type: com.zaxxer.hikari.HikariDataSource
